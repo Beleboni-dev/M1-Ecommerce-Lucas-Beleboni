@@ -62,3 +62,5 @@ const data = [
     tag: ["Camisetas"],
   },
 ];
+
+export  { data }
