@@ -74,7 +74,6 @@ function addEvents() {
 
     // EVENTO PARA ADICIONA ITENS AO CARRINHO
     let addToCartBtns = document.querySelectorAll(".add-to-cart")
-    console.log(addToCartBtns)
     for (let i = 0; i < addToCartBtns.length; i++) {
         addToCartBtns[i].addEventListener("click", addToCartFunction)
     }
@@ -136,7 +135,7 @@ const allProducts = Array.from(ulProducts.children)
 function productsFound() {
 
     allProductsButton.classList.remove("hide")
-    console.log(allProductsButton)
+ 
     allProductsButton.classList.add("visible")
 
     let inputText = document.querySelector(".search-input")
