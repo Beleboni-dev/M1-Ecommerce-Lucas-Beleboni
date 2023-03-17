@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,300;0,400;1,400;1,700&display=swap');
+
+
 html,
 body,
 div,
@@ -85,6 +88,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'Sofia Sans Condensed', sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -98,13 +102,16 @@ hgroup,
 menu,
 nav,
 section {
+  font-family: 'Sofia Sans Condensed', sans-serif;
   display: block;
 }
 body {
+  font-family: 'Sofia Sans Condensed', sans-serif;
   line-height: 1;
 }
 ol,
 ul {
+  font-family: 'Sofia Sans Condensed', sans-serif;
   list-style: none;
 }
 blockquote,
