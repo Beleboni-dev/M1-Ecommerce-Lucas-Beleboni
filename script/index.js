@@ -17,6 +17,7 @@ addEvents() // inicializa função que adiciona os eventos
 
 // Atualiza e recarrega
 function update() {
+
     addEvents()
     updateTotal()
 
@@ -59,7 +60,11 @@ function addEvents() {
     //EVENTO NO BOTÃO DE REMOVER ITEM DO CARRINHO
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("btn-remove-item")) {
+                
             removeCartItem(event.target);
+            if(emptyDisplay.classList.contains("hide")){
+                emptyDisplay.classList.remove("hide")
+            }
         }
     })
 
@@ -106,6 +111,7 @@ allProductsButton.addEventListener("click", allProductsRestore)
 function openCart() {
     emptyDisplay.classList.add("hide")
 }
+
 //FUNÇÃO PARA FILTRAR POR CATEGORIA
 
 function filterProducts(category) {
@@ -146,7 +152,7 @@ function productsFound() {
             const productName = productsFilter[i].querySelector('h3').textContent.toLowerCase()
             if (productName.includes(inputText.value.toLowerCase())) {
                 filteredProducts.push(productsFilter[i])
-
+                
             }
         }
     }
@@ -160,7 +166,7 @@ function productsFound() {
         ulProducts.innerHTML = ""
         ulProducts.insertAdjacentElement("beforebegin", allProductsButton)
         ulProducts.appendChild(filteredProducts[j])
-
+        
     }
 
 }
@@ -199,7 +205,7 @@ function addToCartFunction() {
     let productImg = product.querySelector(".image-products").src
     let productTitle = product.querySelector(".h3-products").textContent
     let productPrice = product.querySelector(".price-products").innerHTML
-   console.log(productTitle)
+   
     if(isItemInCart(productTitle)){
         alert(`Produto no carrinho\nVocê pode alterar a quantidade`)
         return false
@@ -221,7 +227,6 @@ function removeCartItem(button) {
     var cartItem = button.closest(".cart-list-products")
     cartItem.remove()
     update()
-
 }
 
 //função de mudança nas quantidades do item no carrinho 
@@ -290,7 +295,7 @@ function updateTotal() {
     let cartListProducts = document.getElementsByClassName("cart-list-products")
     let totalPrice = document.getElementById("total_price")
     let total = 0
-
+    
     for (let i = 0; i < cartListProducts.length; i++) {
         let productPrice = cartListProducts[i].querySelectorAll(".price-products-cart")
         let productQuantityInputId = cartListProducts[i].querySelector(".cart-quantity").getAttribute("id")
@@ -306,6 +311,9 @@ function updateTotal() {
         total += productTotal
     }
 
+    if(ulCartList.length == 0){
+        
+    }
     total = total.toFixed(2)
     totalPrice.innerHTML = "R$" + total
 }
