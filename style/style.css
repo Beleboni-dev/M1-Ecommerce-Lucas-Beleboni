@@ -55,8 +55,8 @@ header h1 {
 }
 
 main {
-  background-color: rgba(51, 51, 51, 0.5);
-  background: linear-gradient(to right, #f8f8e7, #f5f5dc, #f0f0d1, #ebebc6, #e6e6bb, #e0e0b0, #d9d9a5, #d3d39a, #cccc8f, #c6c684);
+  background-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to right, #f8f8e7, #f5f5dc, #f0f0d1, #ebebc6, #e6e6bb, #e0e0b0, #d9d9a5, #d3d39a, #cccc8f, #d8d8b3);
   width: 100%;
   margin: 0 auto;
   max-width: 1200px;
@@ -98,7 +98,7 @@ main {
   max-width: 240px;
   transition-duration: 0.6s;
   transition-timing-function: ease-out;
-  background-color: #99914634;
+  background-color: #ffffff34;
   box-shadow: rgb(130, 130, 130) 10px 10px 15px -12px;
 }
 
