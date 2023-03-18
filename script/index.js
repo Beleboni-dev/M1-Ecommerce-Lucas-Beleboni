@@ -76,8 +76,8 @@ function addEvents() {
     for (let i = 0; i < inputsQuantity.length; i++) {
         inputsQuantity[i].addEventListener("change", () => {
             itemQuantityChange(inputsQuantity[i])
-            update()
         })
+        update()
     }
 
     // EVENTO PARA ADICIONA ITENS AO CARRINHO
