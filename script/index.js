@@ -5,7 +5,7 @@ import { data } from "./database.js"
 const emptyDisplay = document.getElementById("display_empty")
 const ulCartList = document.getElementById("ul_cart_list")
 const ulProducts = document.getElementById("ul_products")
-
+const productsIntoCart = document.querySelectorAll(".ul-cart-list")
 // Chamando função e Inserindo argumentos para renderizar vitrine
 for (let i = 0; i < data.length; i++) {
     renderShowCase(data[i].id, data[i].img, data[i].nameItem, data[i].description, data[i].value)
@@ -61,13 +61,15 @@ function addEvents() {
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("btn-remove-item")) {
                 
-            removeCartItem(event.target);
-            if(emptyDisplay.classList.contains("hide")){
-                emptyDisplay.classList.remove("hide")
-            }
-        }
-    })
+            removeCartItem(event.target)
+            if (ulCartList.children.length === 0) {
 
+                emptyDisplay.classList.remove('hide')
+              }
+            }
+        })
+
+}
 
     //EVENTO PARA PARAMETRIZAÇÃO DOS INPUTS DE QUANTIDADE
     let inputsQuantity = document.getElementsByClassName("cart-quantity")
@@ -82,7 +84,7 @@ function addEvents() {
     for (let i = 0; i < addToCartBtns.length; i++) {
         addToCartBtns[i].addEventListener("click", addToCartFunction)
     }
-}
+
 
 //BOTÃO PESQUISAR E TECLA ENTER
 const searchInput = document.querySelector('.search-input');
@@ -199,9 +201,9 @@ function isItemInCart(productTitle) {
 }
 
 
-// função que seleciona o elemento e adiciona items no carrinho
+    // função que seleciona o elemento e adiciona items no carrinho
 function addToCartFunction() {
-    let product = this.parentElement;
+    let product = this.parentElement
     let productImg = product.querySelector(".image-products").src
     let productTitle = product.querySelector(".h3-products").textContent
     let productPrice = product.querySelector(".price-products").innerHTML
@@ -318,7 +320,7 @@ function updateTotal() {
     totalPrice.innerHTML = "R$" + total
 }
 
-
+    
 
 // FUNÇÃO RENDERIZA CARRINHO
 
