@@ -76,6 +76,7 @@ function addEvents() {
     for (let i = 0; i < inputsQuantity.length; i++) {
         inputsQuantity[i].addEventListener("change", () => {
             itemQuantityChange(inputsQuantity[i])
+            update()
         })
     }
 
